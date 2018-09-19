@@ -1,0 +1,29 @@
+﻿<Window x:Class="Accounting_Project.Views.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Лична счетоводна книга" Height="200" Width="380"
+        Loaded="Window_Loaded">
+    <Border Background="#2e3137" Padding="10">
+        <StackPanel>
+
+            <!-- Supplier Code -->
+            <TextBlock Text="Потребителско име" Foreground="White"/>
+            <TextBox Text="{Binding User.username, UpdateSourceTrigger=PropertyChanged}" MaxLength="29" Padding="2" Background="#545d6a" Foreground="White"/>
+
+            <!-- Supplier Code -->
+            <TextBlock Text="Парола" Margin="0 10 0 0" Foreground="White"/>
+            <TextBox Text="{Binding User.password, UpdateSourceTrigger=PropertyChanged}" MaxLength="29" Padding="2" Background="#545d6a" Foreground="White"/>
+
+            <!-- Buttons -->
+            <Grid Margin="0 30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Command="{Binding UpdateCommand}" Content="Вход" Grid.Column="0" Margin="5,0,5,0" Background="#545d6a" Foreground="White"/>
+                <Button Content="Регистрация" Grid.Column="1" Margin="5.2,0,0,0.2" Background="#545d6a" Foreground="White" />
+            </Grid>
+
+        </StackPanel>
+    </Border>
+</Window>
